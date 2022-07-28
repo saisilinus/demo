@@ -79,8 +79,6 @@ public class DonationRepositoryImpl implements DonationRepositoryCustom {
 
         Aggregation aggregation = Aggregation.newAggregation(filter, project, groupByMonth, projectMonthAndTotal, sortByMonth);
         AggregationResults<MonthlyTotals> results = mongoTemplate.aggregate(aggregation, "donation", MonthlyTotals.class);
-        // log.info("Graph Results");
-        // log.info(results.getMappedResults());
         if (!results.getMappedResults().isEmpty())
             return results.getMappedResults();
         else

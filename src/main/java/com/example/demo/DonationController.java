@@ -21,14 +21,14 @@ public class DonationController {
 	    List<MonthlyTotals> monthlyTotals = customRepository.getMonthlyTotals(1641029820000L, 1648373820000L, "1");
         log.info("Total");
 		log.info("-------------------------------");
-		log.info(total.total);
+		log.info("Total: " + total.total);
 		log.info("Monthly Totals");
 		log.info("-------------------------------");
         for (MonthlyTotals monthlyTotal: monthlyTotals) {
-            log.info("Month");
-            log.warn(monthlyTotal.month);
-            log.info("Total");
-            log.warn(monthlyTotal.total);
+            log.info("Month: " + monthlyTotal.month + " Total: " + monthlyTotal.total);
+            // log.warn(monthlyTotal.month);
+            // log.info("Total");
+            // log.warn(monthlyTotal.total);
         }
 
         // return total;
@@ -49,6 +49,9 @@ public class DonationController {
         // List<Donation> dons = Arrays.asList(donation1, donation2, donation3, donation4, donation5, donation6, donation7, donation8, donation9, donation10, donation11, donation12);
         // repository.insert(dons);
 
+        // AllTotals allTotals = new AllTotals(monthlyTotals, total);
+
+        // return allTotals;
         return "You did it";
     }
 }
